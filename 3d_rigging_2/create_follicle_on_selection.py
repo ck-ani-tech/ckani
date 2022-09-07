@@ -28,7 +28,7 @@ def createFollicles(follicle_name='follicle'):
         pm.connectAttr(mesh_shape_name+'.outMesh', shape_node+'.inputMesh')
     elif pm.nodeType(target_shape) == 'nurbsSurface':
         pm.connectAttr(mesh_shape_name+'.worldMatrix[0]', shape_node+'.inputWorldMatrix')
-        pm.connectAttr(mesh_shape_name+'.local', shape_node+'.nurbsSurface')
+        pm.connectAttr(mesh_shape_name+'.local', shape_node+'.inputSurface')
     
     # set parameter U and V
     pm.setAttr(shape_node + '.parameterU', param[0])
